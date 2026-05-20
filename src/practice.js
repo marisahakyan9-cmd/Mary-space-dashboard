@@ -26,3 +26,24 @@ latitude: "55.7",
 longitude: "88,3"
 }
 console.log(issPosition.latitude);
+
+const asteroids = [
+    {name: "2024 AB1", diameter : 120, hazardous:false},
+    {name: "2024 CD2", diameter : 45, hazardous:true},
+    {name: "2024 EF3", diameter : 890, hazardous:false},
+    {name: "2024 GH4", diameter : 23, hazardous:true},
+]
+const names = asteroids.map(person =>person.name)
+console.log(names);
+
+const diameter = asteroids.filter(person =>person.diameter)
+console.log(diameter);
+
+const hazardous = asteroids.slice(0,1)
+console.log(hazardous );
+
+const hazardousNames = asteroids
+  .filter(asteroid => asteroid.hazardous)
+  .map(asteroid => asteroid.name);
+
+  console.log("hazardousNames");

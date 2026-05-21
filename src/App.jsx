@@ -1,4 +1,4 @@
-
+import './App.css'
 export default function App(){
   return (
     
@@ -30,3 +30,5 @@ function MissionBadge (){
   </div>
  )
 }
+
+<ISSCard latitude = "42.36" longitude="-71.05"/>

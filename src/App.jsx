@@ -28,6 +28,55 @@ function ISSTracker(){
     </div>
   )
 }
+function PeopleSpace(){
+  const [people,setPeople] = useState(null)
+
+  useEffect(() => {
+    fetch('http://api.open-notify.org/astros.json')
+    .then(r => r.json())
+    .then(data => setPeople(data.people))
+  },[])
+  return(
+    <div className='card'>
+  <h2>People in Space</h2>
+  {people ? (
+    <ul>
+      {people.map(person =>(
+        <li key={person.name}>
+          {person.name} - {person.craft}
+        </li>
+      ))}
+    </ul>
+  ) :<p>Loading ...</p>
+  }
+  </div>
+)
+}
+function APOD () {
+  const[pic,setPic] = useState(null)
+  useEffect(() => {
+    fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+    .then(r =>r.json())
+    .then(data =>setPic(data))
+  },[])
+  return (
+    <div className='card'>
+      <h2>Picture of the Day </h2>
+      {pic ? (
+        <div>
+          <h3>{pic.title}</h3>
+          {pic.media_type === 'image'
+          ?<img src={pic.url} alt = {pic.title} stayle={{white:'100%'}}/>
+        :<a href ={pic.url} target="_blank">Whatch Video</a>
+        }
+        
+        </div>
+      ):<p>Loading ...</p>
+}
+    </div>
+  )
+}
+
 export default function App(){
   return (
     
@@ -38,6 +87,8 @@ export default function App(){
         <MissionBadge/>
         <Counter/>
         <ISSTracker/>
+        <PeopleSpace/>
+        <APOD/>
     </div>
   )
 }
@@ -56,6 +107,8 @@ function MissionBadge (){
  return(
   <div className="dashboard">
       <h3>Iss Position</h3>
+  
+
  <p>Latitude: 44.34</p>
     <p>Longitude: -54.09</p>
   </div>
@@ -63,3 +116,5 @@ function MissionBadge (){
 }
 
 <ISSCard latitude = "42.36" longitude="-71.05"/>
+
+ 

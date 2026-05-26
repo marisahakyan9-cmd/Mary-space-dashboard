@@ -1,5 +1,6 @@
 import './App.css'
 import { useEffect, useState } from 'react'
+
 function ClickToPlayVideo({ videoUrl }) {
   const [play, setPlay] = useState(false);
 
@@ -91,12 +92,13 @@ function PeopleSpace() {
   const [people, setPeople] = useState(null)
  
   useEffect(() => {
-    fetch('https://api.open-notify.org/astros.json')
+    fetch('http://api.open-notify.org/astros.json')
       .then(r => r.json())
       .then(data => setPeople(data.people))
   }, [])
   
   return (
+    
     <div className='card'>
       <h2>People in Space</h2>
       {people ? (
@@ -144,6 +146,12 @@ function APOD() {
 }
 
 const spaceCardsData = [
+{
+    id: 'people-in-space-card',
+    title: 'PEOPLE IN SPACE',
+    desc: 'Տիեզերագնացների ընթացիկ ցուցակը ուղեծրում',
+    isOpenPeople: true 
+  },
   {
     id: 'apod',
     title: 'PICTURE OF THE DAY',
@@ -157,7 +165,7 @@ const spaceCardsData = [
     content: (
       <div>
        <h2>NASA Announces Agencywide Realignment</h2>
- <img src ="https://www.nasa.gov/wp-content/uploads/2026/04/nasa-meatball-1.webp"width="200" height="128" />
+ <img src ="https://www.nasa.gov/wp-content/uploads/2026/04/nasa-meatball-1.webp"width="200" height="128"loading="lazy" />
 <p>
   NASA announced an agencywide restructuring to improve mission focus and
   support the U.S. National Space Policy.
@@ -199,7 +207,7 @@ const spaceCardsData = [
   },
   { id: 'tech-innovation', title: 'TECHNOLOGY AND INNOVATION', desc: 'Տեխնոլոգիաներ և նորարարություններ', content: 
   <div>
-    <img src ="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/explainers/tech-and-innovation/Picture1.jpg?w=1430&h=804&fit=crop&crop=faces%2Cfocalpoint"width="200" height="128" />
+    <img src ="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/explainers/tech-and-innovation/Picture1.jpg?w=1430&h=804&fit=crop&crop=faces%2Cfocalpoint"width="200" height="128"loading="lazy" />
     <h2>Technology and Innovation</h2>
     <p>NASA pushes the frontiers of engineering, taking smart risks and pursuing innovative ways to explore our planet and the solar system. As an innovation hub for Earth science, we develop new technologies to observe the unseen and answer critical questions about our planet.
 Together with industry partners, we conceive and build the next generation of remote sensing tools, enabling NASA missions and charting a path for operational agencies and businesses. By testing and proving cutting-edge technologies — from advanced sensors to predictive models — NASA Earth Science creates jobs, drives innovation, and sustains U.S. leadership in the exploration of Earth and other planets.</p>
@@ -216,7 +224,7 @@ These investments also advance America's space exploration goals. The same satel
      desc: 'Երկրագնդի ուսումնասիրությունը գործնականում', 
      content: 
      <div>
-      <img src="https://science.nasa.gov/wp-content/uploads/2024/03/es2a-banner-white.png"width="500" height="300"/>
+      <img src="https://science.nasa.gov/wp-content/uploads/2024/03/es2a-banner-white.png"width="500" height="300"loading="lazy"/>
       <h2>Earth Science at Work</h2>
       <p>NASA Earth Science <b>helps Americans respond to challenges and societal needs</b> — such as wildland fires, hurricanes, and water supplies for farming — by putting actionable satellite information into the hands of decisionmakers. NASA conceives, builds, and flies cutting-edge satellites and instruments; harvests data from those tools and from commercial partners; combines it with expert insights and the worlds most advanced models — all to advance solutions for monitoring, prediction, and management.</p>
       <h2>Why it matters</h2>
@@ -235,8 +243,7 @@ These investments also advance America's space exploration goals. The same satel
 
 <ul>
   <li>
-    Generate scientific data to support decisions at local, state,
-    federal, and international levels.
+    Generate scientific data to support decisions at local, state,federal, and international levels.
   </li>
 
   <li>
@@ -267,14 +274,14 @@ These investments also advance America's space exploration goals. The same satel
       content: 
       <div>
         <h2>More NASA Images</h2>
-       <img src="https://www.nasa.gov/wp-content/uploads/2026/05/55252854454-c4ed9aa664-o.jpg" width="500" height="300"/>
-       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/55205768700-7d3f580146-o.jpg"width="500" height="300"/>
-       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/art002e023345-o.jpg"width="500" height="300"/>
-       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/art002e015228orig.jpg"  width="500" height="300"/>
-       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/55182924516-9d78d1e3ef-o.jpg"width="500" height="300"  />
-       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/art002e009057orig.jpg"width="500" height="300" />
-       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/xraydot-illus-1.jpg"width="500" height="300" />
-            <img src="https://www.nasa.gov/wp-content/uploads/2026/04/full-res-for-display-3.png"width="500" height="300" />
+       <img src="https://www.nasa.gov/wp-content/uploads/2026/05/55252854454-c4ed9aa664-o.jpg" width="500" height="300"loading="lazy"/>
+       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/55205768700-7d3f580146-o.jpg"width="500" height="300"loading="lazy"/>
+       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/art002e023345-o.jpg"width="500" height="300"loading="lazy"/>
+       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/art002e015228orig.jpg"  width="500" height="300"loading="lazy"/>
+       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/55182924516-9d78d1e3ef-o.jpg"width="500" height="300"  loading="lazy"/>
+       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/art002e009057orig.jpg"width="500" height="300"loading="lazy" />
+       <img src="https://www.nasa.gov/wp-content/uploads/2026/04/xraydot-illus-1.jpg"width="500" height="300"loading="lazy" />
+            <img src="https://www.nasa.gov/wp-content/uploads/2026/04/full-res-for-display-3.png"width="500" height="300"loading="lazy" />
         </div> 
         },
   
@@ -284,7 +291,7 @@ These investments also advance America's space exploration goals. The same satel
      desc: 'Ընթացիկ և ապագա տիեզերական առաքելությունները', 
      content: 
      <div>
-      <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/a-train/images/A-Train_2024_UPDATE.jpg?w=2000&h=1352&fit=crop&crop=faces%2Cfocalpoint"width="500" height="300"/>
+      <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/a-train/images/A-Train_2024_UPDATE.jpg?w=2000&h=1352&fit=crop&crop=faces%2Cfocalpoint"width="500" height="300"loading="lazy"/>
       <h2>Missions</h2>
       <h3>A-Train: The Afternoon Constellation</h3>
       <h3>What is the A-Train?</h3>
@@ -358,7 +365,7 @@ NASA satellite constellations are groups of satellites that fly in close proximi
       <div>
       
         <h2>Humans in Space</h2>
-        <img src="https://www.nasa.gov/wp-content/uploads/2022/12/51476067951-e10dfb6875-o-1.jpg"width="500" height="300"/>
+        <img src="https://www.nasa.gov/wp-content/uploads/2022/12/51476067951-e10dfb6875-o-1.jpg"width="500" height="300"loading="lazy"/>
         <p>For more than two decades, people have lived and worked continuously aboard the International Space Station, advancing scientific knowledge, and making research breakthroughs that are not possible on Earth.</p>
        <h2>Why go to space?</h2>
        <p>At NASA, we explore the secrets of the universe for the benefit of all, creating new opportunities and inspiring the world through discovery.
@@ -374,12 +381,12 @@ NASA was created more than half a century ago to begin answering some of these q
        <p>NASA’s astronauts will take you on a journey to the International Space Station, exploring the life-changing experience of an orbital perspective.
 
 </p>
-  {/* Կանչում ենք կոճակը հենց այստեղ */}
+  
       <ClickToPlayVideo videoUrl="https://www.youtube.com/embed/DIkqs9_FK28" />
       <h2>Destinations</h2>
       <p>NASA is taking a steppingstone approach to human exploration in space. Building on NASAs 60 years of exploration experience and more than 20 years of continuous human presence on the International Space Station in low Earth orbit, we will extend humanity farther into space than ever before. The International Space Station has built the foundation to conduct complex operations in space, perform research in a microgravity environment, foster a growing space economy, and forge international partnerships toward a common goal. Artemis missions will establish our long-term presence at the Moon as astronauts explore more of the lunar surface than ever before to learn about the origins of the solar system and prepare for humanitys next giant leap: human missions to Mars.</p>
 <h2>Moon to Mars Architecture</h2>
-<img src="https://www.nasa.gov/wp-content/uploads/2022/12/triplets-m2m-architecture.jpg"width="500" height="300"/>
+<img src="https://www.nasa.gov/wp-content/uploads/2022/12/triplets-m2m-architecture.jpg"width="500" height="300"loading="lazy"/>
 <p><b>NASA's Moon to Mars architecture represents the hardware and operations needed for human missions to the Moon and Mars, and how they function together as a system.</b></p>
 <p>The architecture is not a mission, a manifest, or a set of requirements, but it does define the elements — rockets, spacecraft, rovers, spacesuits, communications relays, and more — that will be incrementally developed and delivered to the Moon and Mars for long-term, human-led scientific discovery in deep space. </p>
        
@@ -393,7 +400,7 @@ NASA was created more than half a century ago to begin answering some of these q
       content: 
       <div>
         <h2>Earth & Universe</h2>
-             <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRyGKUFIGiPJypGO8f2xtHD5-iiFSG6bbnUWBlFW4_tKs_TUb18NrQP-Ya1vtTGSyodHN-3uYpQLv1ELL4PJr7SouDmoswGtTQa-2-WKFciykHc9QA"width="400" height="400"/>
+             <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRyGKUFIGiPJypGO8f2xtHD5-iiFSG6bbnUWBlFW4_tKs_TUb18NrQP-Ya1vtTGSyodHN-3uYpQLv1ELL4PJr7SouDmoswGtTQa-2-WKFciykHc9QA"width="400" height="400"loading="lazy"/>
         <p>Planet Earth and the boundless universe surrounding us are among the most mysterious and beautiful topics in human history, forcing us to reflect on our existence and our place within this infinity. Our planet, Earth, is just a tiny speck by cosmic standards, yet it is exceptional to us, as it is currently the only known place where life exists. Its perfect distance from the Sun allows water to remain in liquid form, while the atmosphere protects us from destructive cosmic radiation. Although we seem to be stationary, Earth rotates around the Sun at a tremendous speed, being one of the eight planets in the Solar System.</p>
 
 <p>If we venture beyond the borders of our system, we will see that our Sun is just one of the hundreds of billions of stars in the Milky Way galaxy, many of which have their own planets. However, the infinity of the universe truly begins beyond our galaxy, where trillions of other galaxies exist within the observable space. This entire system is not static; since the moment of the Big Bang, for about 13.8 billion years now, the universe has continued to expand at a great speed in all directions. Thus, our blue planet, suspended in the vast and dark infinity of space, is the only home we have, which makes us appreciate it even more and, at the same time, always strive toward the unknown stars with our minds.</p>
@@ -425,7 +432,7 @@ NASA was created more than half a century ago to begin answering some of these q
      content:
       <div>
         <h2>Aeronautics</h2>
-        <img src="https://www.nasa.gov/wp-content/uploads/2026/03/x-59-afrc2026-0048-17.jpg?resize=2000,1333"width="500" height="300"/>
+        <img src="https://www.nasa.gov/wp-content/uploads/2026/03/x-59-afrc2026-0048-17.jpg?resize=2000,1333"width="500" height="300"loading="lazy"/>
         <p>Aviation and atmospheric flight technologies encompass the scientific and engineering solutions that enable aircraft to perform controlled flights within Earth's air mass, relying on the physical properties of air. Four main forces act upon a flying vehicle: lift, which is created due to the special aerodynamic shape of the wings; weight (gravity), which opposes it; thrust, generated by engines to propel the vehicle forward; and aerodynamic drag, which slows its progress. The development of aviation is closely linked to the evolution of engines, ranging from piston systems in small aircraft to modern turbojets and ramjet/scramjet engines for supersonic and hypersonic flights.</p>
         <p>Today, the field is undergoing a digital and ecological revolution. Aircraft are managed by complex "Fly-by-Wire" computer systems that ensure safety, while traditional aluminum is being replaced by lightweight and ultra-strong carbon composites, significantly saving fuel. To reduce emissions, sustainable aviation fuels (SAF), as well as electric, hybrid, and hydrogen propulsion systems—including electric air taxis (eVTOL)—are being actively developed. In parallel, the advancement of unmanned aerial vehicles (UAVs/drones), driven by artificial intelligence and precision sensors, is completely transforming flight dynamics in logistics, agriculture, and the military industry.</p>
          <ClickToPlayVideo videoUrl="https://www.youtube.com/embed/gR4Xuslczoo?si=S-g-Ng_dP3tG32UA" />
@@ -438,7 +445,7 @@ NASA was created more than half a century ago to begin answering some of these q
       content:
        <div>
         <h2>NASA Missions</h2>
-        <img src ="https://assets.science.nasa.gov/dynamicimage/assets/science/cds/general/images/2023/06/s/solar-system-illustration-16x9-1.jpg?w=6600&h=3712&fit=crop&crop=faces%2Cfocalpoint"width="600" height="600"/>
+        <img src ="https://assets.science.nasa.gov/dynamicimage/assets/science/cds/general/images/2023/06/s/solar-system-illustration-16x9-1.jpg?w=6600&h=3712&fit=crop&crop=faces%2Cfocalpoint"width="600" height="600" loading="lazy"/>
         <p>According to official NASA data, the agency's history and current operations consist of historic achievements that have reshaped human understanding, alongside cutting-edge programs directed toward deep space.</p>
         <h4>Here is a summary of NASA's core programs, based on their official sources:</h4>
         <h2> Major Historical Programs</h2>
@@ -472,9 +479,13 @@ NASA was created more than half a century ago to begin answering some of these q
           🌐 Explore Earth in 3D
         </button>
         </div> }
+        
+        
+        
 ];
 
 export default function App() {
+
   const [activeCard, setActiveCard] = useState(null);
 
   const handleCardClick = (cardId) => {
@@ -502,17 +513,27 @@ export default function App() {
     const currentRow = Math.floor(index / columns);
 
     if (currentRow === cardRow && isLastInRow) {
-      return (
+ return (
         <div className="info-box full-row-info content-fade-in">
-          {currentActiveData?.isComponent ? <APOD /> : currentActiveData?.content}
+          {/* Եթե սեղմվել է մեր նոր կոճակը, կանչում ենք Ձեր PeopleSpace բաղադրիչը */}
+          {currentActiveData?.isOpenPeople ? (
+            <PeopleSpace />
+          ) : currentActiveData?.isComponent ? (
+            <APOD />
+          ) : (
+            currentActiveData?.content
+          )}
         </div>
       );
     }
-    return null;
+    return null
   };
 
   return (
     <div className="dashboard">
+      <div className='dashboard'>
+          <iframe src="src/js-turtle-master/turtle.html" width="700" height="700" loading="lazy"></iframe>
+      </div>
       <h1>Mary-space-dashboard</h1>
       <p className="date-sub">20.05.2026</p>
       
@@ -524,7 +545,7 @@ export default function App() {
           <Counter />
         </div>
         <ISSTracker />
-        <PeopleSpace />
+ 
       </div>
 
       {/* ԿՈՃԱԿՆԵՐԻ ՑԱՆՑ */}
@@ -541,7 +562,7 @@ export default function App() {
               </div>
               <span className="arrow-btn">→</span>
             </div>
-            {/* Տեղեկատվական տուփը կհայտնվի հենց այս տողի ներքևում */}
+          
             {renderRowInfoBox(index)}
           </Fragment>
         ))}
@@ -550,5 +571,5 @@ export default function App() {
   )
 }
 
-// Չմոռանաս React-ից ներմուծել Fragment-ը ֆայլի ամենավերևում, կամ օգտագործիր <> </> տեգերը
+
 import { Fragment } from 'react';

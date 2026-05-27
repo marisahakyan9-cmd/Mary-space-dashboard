@@ -386,7 +386,7 @@
         <h2>Destinations</h2>
         <p>NASA is taking a steppingstone approach to human exploration in space. Building on NASAs 60 years of exploration experience and more than 20 years of continuous human presence on the International Space Station in low Earth orbit, we will extend humanity farther into space than ever before. The International Space Station has built the foundation to conduct complex operations in space, perform research in a microgravity environment, foster a growing space economy, and forge international partnerships toward a common goal. Artemis missions will establish our long-term presence at the Moon as astronauts explore more of the lunar surface than ever before to learn about the origins of the solar system and prepare for humanitys next giant leap: human missions to Mars.</p>
   <h2>Moon to Mars Architecture</h2>
-  <img src="https://www.nasa.gov/wp-content/uploads/2022/12/triplets-m2m-architecture.jpg"width="500" height="300"loading="lazy"/>
+  <img src="https://www.nasa.gov/wp-content/uploads/2022/12/triplets-m2m-architecture.jpg"width="500" height="300"/>
   <p><b>NASA's Moon to Mars architecture represents the hardware and operations needed for human missions to the Moon and Mars, and how they function together as a system.</b></p>
   <p>The architecture is not a mission, a manifest, or a set of requirements, but it does define the elements — rockets, spacecraft, rovers, spacesuits, communications relays, and more — that will be incrementally developed and delivered to the Moon and Mars for long-term, human-led scientific discovery in deep space. </p>
         
